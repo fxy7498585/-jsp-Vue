@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-on</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>v-on</h1>
+	<hr>
+	<div id="app">
+		本场比赛得分:<span v-text="gradit"></span>
+		<p>
+			<button v-on:click="add">加分</button>
+			<button v-on:click="jj">减分</button><br>
+			<input type="text" v-on:keyup.enter="onEnter" v-model="gradit2">
+			<span v-text="gradit2"></span>
+		</p>
+	</div>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:'#app',
+			data:{
+				gradit:0,
+				gradit2:1
+			},
+			methods:{
+				add:function(){
+					this.gradit++;
+				},
+				jj:function(){
+					this.gradit--;
+					// alert(1);
+				},
+				onEnter:function(){
+					this.gradit=this.gradit+parseInt(this.gradit2);
+				}
+			}
+		});
+	</script>
+</body>
+</html>

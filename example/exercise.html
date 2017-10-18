@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>exercise</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+   <h1>exercise</h1>
+   <hr>
+ <!--  <div id="app1">
+  	<span v-bind:title="message">
+    	鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  	</span>
+  </div>
+    <div id="app2">
+    	<p v-if="seen">yes</p>
+    	<p v-else>no</p>
+    	 <button v-on:click="btn">button</button>
+    	 <ul>
+    	 	<li v-for="item in items">{{item.name}}</li>
+    	 </ul>
+    </div>
+ -->
+
+<!-- 
+    <div id="app3">
+    	<ol>
+    		<todo-item v-for="item in items" v-bind:item="item">
+    		</todo-item>
+    	</ol>
+    </div>
+
+	<div id="app4">
+		<div v-html="pp"></div>
+		<div v-bind:class="classB">111</div>
+		{{isOk?'yes':'no'}}
+		{{a}}
+	</div>
+
+
+	<div id="example">
+		<p>{{message}}</p>
+		<p>{{reverseMessage}}</p>
+		<span v-bind:title="click">click</span>
+	</div> -->
+	<!-- <div id="app5">
+		<p v-bind:class="classA">111</p>
+	</div> -->
+	<div id="app6">
+		<p v-bind:class="{classAA:istrue,classBB:isis}">123</p>
+		<p v-bind:class="classObject">123</p>
+		<p v-bind:class="[a,b]">123</p>
+		<p v-bind:class="[isOk?a:b]">123</p>
+	</div>
+
+<style>
+	.classAA{
+		color:red;
+	}
+	.classBB{
+		color:blue;
+	}
+	.classCC{
+		font-size: 20px;
+	}
+</style>
+   <script type="text/javascript">
+   	var app6=new Vue({
+   		el:'#app6',
+   		data:{
+   			istrue:false,
+   			isis:true,
+   			isOk:false,
+   			a:'classBB',
+   			b:'classCC'
+   		},
+   		computed:{
+   			classObject:function(){
+   				return {
+   					classAA:this.isOk&&!this.erro
+   				}
+   			}
+   		}
+   	})
+   	// var app5=new Vue({
+   	// 	el:'#app5',
+   	// 	data:{
+   	// 		classA:'classAA'
+   	// 	}
+   	// });
+   // 	var example=new Vue({
+   // 		el:'#example',
+   // 		data:{
+   // 			message:'hello'
+   // 		},
+   // 		computed:{
+   // 			reverseMessage:function(){
+   // 				 return this.message.split('').reverse().join('')
+   // 			},
+   // 			click:function(){
+   // 				return this.
+   // 			}
+   // 		}
+   // 	})
+
+
+
+   // 	var app4=new Vue({
+   // 		el:'#app4',
+   // 		data:{
+   // 			pp:'<li>111</li>',
+   // 			classB:'classAA',
+   // 			isOk:true,
+   // 			a:1
+   // 		}
+   // 	});
+  	// Vue.component('todo-item',{
+  	// 	props:['item'],
+  	// 	template:`<li>{{item}}</li>`
+  	// });
+  	// var app3=new Vue({
+  	// 	el:'#app3',
+  	// 	data:{
+  	// 		items:['aa','bb','cc','dd']
+  	// 	}
+  	// })
+
+   	// var app1=new Vue({
+   	// 	el:'#app1',
+   	// 	data:{
+   	// 		message:'页面加载于'+ new Date().toLocaleString()
+   	// 	}
+   	// });
+   	// var app2=new Vue({
+   	// 	el:'#app2',
+   	// 	data:{
+   	// 		seen:false,
+   	// 		items:[{name:'bob'},{name:'tim'},{name:'alla'}]
+   	// 	},
+   	// 	methods:{
+   	// 		btn:function(){
+   	// 			if(this.seen){
+   	// 				return this.seen=false;
+   	// 			}else{
+   	// 				return this.seen=true;
+   	// 			}
+   	// 		}
+   	// 	}
+   	// });
+   </script>
+</body>
+</html>

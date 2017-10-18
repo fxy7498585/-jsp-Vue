@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue.extend扩展实例构造器</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<h1>vue.extend扩展实例构造器</h1>
+	<hr>
+	<author></author>
+	<div id="author"></div>
+	<script type="text/javascript">
+		var author=Vue.extend({
+			template:'<p><a :href="authorUrl">{{authorName}}</a></p>',
+			data:function(){
+				return {
+					authorName:'fuxingyue',
+					authorUrl:'http://jspang.com'
+				}
+			}
+		});
+
+		new author().$mount('author');
+		/*可以绑定id标签类   最好用id*/
+		new author().$mount('#author');
+	</script>
+</body>
+</html>

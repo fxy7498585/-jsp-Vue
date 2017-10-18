@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-Template模板</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>vue-Template模板</h1>
+	<hr>
+	<div id="app">
+		{{count}}
+	</div>
+
+	<template id="app2">
+		<h2 style="color:red;">我是template标签模板</h2>
+	</template>
+
+	<script type="x-template" id="app3">
+		<h2 style="color:red;">我是script标签模板</h2>
+	</script>
+	<template id="app4">
+		<h2 style="color:red;">我是script标签模板</h2>
+	</template>
+	<script type="text/javascript">
+		var app=new Vue({
+			el:'#app',
+			data:{
+				count:1
+			}
+			/*template:`
+				<h2 style="color:red;">我是选项模板</h2>
+			`*/
+		});
+		var app2=new Vue({
+			el:'#app2',
+			template:'#app2'
+		})
+		var app3=new Vue({
+			el:'#app3',
+			template:'#app3'
+		})
+		var app4=new Vue({
+			el:'#app4',
+			template:'#app4'
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue.set全局操作</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+	<style>
+	
+	</style>
+</head>
+<body>
+	<h1>vue.set全局操作</h1>
+	<hr>
+	<div id="app">
+		{{count}}
+		<ul>
+			<li v-for="item in arr">{{item}}</li>
+		</ul>
+	</div>
+	<p><button onclick="add()">add</button></p>
+	<!-- <div id="app2">
+		<button v-on:click="jj">alert</button>
+	</div> -->
+
+
+	<script type="text/javascript">
+		function add(){
+			// Vue.set(outdata,'count',2)
+			// app.count++;
+			// outdata.count++;
+			// app.arr[1]='dd'
+			Vue.set(app.arr,1,'ddd')
+		}
+		var outdata={
+			count:1,
+			arr:['aa','bb','cc']
+		}
+		var app=new Vue({
+			el:'#app',
+			data:outdata
+		})
+		/*var app2=new Vue({
+			el:'#app2',
+			methods:{
+				jj:function(){
+					alert(2);
+				}
+			}
+		})*/
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>propsData option</title>
+	<script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+	<h1>propsData option</h1>
+	<hr>
+	<div id="app">
+		<p>{{newPrice}}</p>
+		<ul>
+			<li v-for="item in reverNews">{{item.title}}-{{item.data}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var newsList=[{
+			title:'aaaaaaaa',
+			data:'2017/10/18'
+		},{
+			title:'bbbbbbbb',
+			data:'2017/10/19'
+		},{
+			title:'cccccccc',
+			data:'2017/10/15'
+		},{
+			title:'dddddddd',
+			data:'2017/10/16'
+		}]
+		new Vue({
+			el:'#app',
+			data:{
+				price:100,
+				newsList:newsList
+			},
+			computed:{
+				newPrice:function(){
+					return this.price='￥'+this.price+'元'
+				},
+				reverNews:function(){
+					return this.newsList.reverse();
+				}
+			}
+		})
+	</script>
+</body>
+</html>
